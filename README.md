@@ -95,6 +95,6 @@ lib/
 
 # Web view
 
-![Web 1](image-4.png)
+![Web 1](image-6.png)
 
-![Web 2](image-5.png)
+![Web 2](image-7.png)

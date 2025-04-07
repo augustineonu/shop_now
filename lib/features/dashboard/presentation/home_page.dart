@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
                           SizedBox(width: 7.w),
                           Container(
                             padding: EdgeInsets.all(8.sp),
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 shape: BoxShape.circle, color: white),
                             child: SvgPicture.asset(
                               AssetsManager.exclamation,
@@ -165,14 +165,14 @@ class HomePage extends StatelessWidget {
               //   height: 14,
               // ),
               Container(
-                padding: EdgeInsets.symmetric(vertical: 14, horizontal: 20),
+                padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
                 height: 410.sp,
                 child: Column(
                   children: [
                     Expanded(
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        physics: BouncingScrollPhysics(
+                        physics: const BouncingScrollPhysics(
                             decelerationRate: ScrollDecelerationRate.normal),
                         shrinkWrap: true,
                         itemCount: controller.filteredProducts.length,
@@ -220,9 +220,9 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(left: 20, right: 15, top: 25),
+                padding: const EdgeInsets.only(left: 20, right: 15, top: 25),
                 height: 500.sp,
-                decoration: BoxDecoration(color: white),
+                decoration: const BoxDecoration(color: white),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

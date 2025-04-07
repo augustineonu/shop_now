@@ -46,7 +46,7 @@ class ProductCard extends StatelessWidget {
                   child: Container(
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.sp, vertical: 7.sp),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: white,
                       shape: BoxShape.circle,
                     ),
@@ -76,7 +76,7 @@ class ProductCard extends StatelessWidget {
                 child: Container(
                   padding:
                       EdgeInsets.symmetric(horizontal: 10.sp, vertical: 7.sp),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: white,
                     shape: BoxShape.circle,
                   ),

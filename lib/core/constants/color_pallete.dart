@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_now/core/styles/text_style.dart';
 
 const primaryColor = Color(0xff274FED);

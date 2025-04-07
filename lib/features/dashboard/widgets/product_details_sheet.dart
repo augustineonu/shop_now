@@ -8,7 +8,7 @@ import 'package:shop_now/features/dashboard/data/model/product_model.dart';
 class ProductDetailSheet extends StatefulWidget {
   final Product product;
 
-  const ProductDetailSheet({required this.product});
+  const ProductDetailSheet({super.key, required this.product});
 
   @override
   State<ProductDetailSheet> createState() => _ProductDetailSheetState();
@@ -41,9 +41,9 @@ class _ProductDetailSheetState extends State<ProductDetailSheet> {
         return Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
           ),
           child: SingleChildScrollView(
             controller: scrollController,
@@ -74,7 +74,7 @@ class _ProductDetailSheetState extends State<ProductDetailSheet> {
                         fontSize: 24.sp,
                       ),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     if (product.hasDiscount ?? false)
                       Text(
                         "₦${product.originalPrice?.toStringAsFixed(0)}",
@@ -140,7 +140,7 @@ class _ProductDetailSheetState extends State<ProductDetailSheet> {
                         colorText: Colors.black,
                         snackPosition: SnackPosition.TOP,
                         borderRadius: 12,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                       );
                     },
                     icon: Icon(Icons.shopping_cart_outlined,
@@ -153,7 +153,7 @@ class _ProductDetailSheetState extends State<ProductDetailSheet> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                       backgroundColor: primaryColor,
                       textStyle: TextStyle(
                           fontSize: 16.sp, fontWeight: FontWeight.bold),
