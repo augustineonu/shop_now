@@ -74,22 +74,22 @@ class ProductController extends GetxController {
     merchants.value = [
       Merchant(
         name: "Justrite",
-        logo: "assets/images/ogabassey.png",
+        logo: "assets/images/icons8-store.png",
         backgroundColor: const Color(0xFF1D297E),
       ),
       Merchant(
         name: "Orile Restaurant",
-        logo: "assets/images/ogabassey.png",
+        logo: "assets/images/icons8-store.png",
         backgroundColor: Colors.black,
       ),
       Merchant(
         name: "Slot",
-        logo: "assets/images/ogabassey.png",
+        logo: "assets/images/slot-nigeria-logo.png",
         backgroundColor: const Color(0xFFE53935),
       ),
       Merchant(
         name: "Pointek",
-        logo: "assets/images/ogabassey.png",
+        logo: "assets/images/icons8-store.png",
         backgroundColor: const Color(0xFF0078D4),
       ),
       Merchant(
@@ -99,27 +99,27 @@ class ProductController extends GetxController {
       ),
       Merchant(
         name: "Casper Stores",
-        logo: "assets/images/ogabassey.png",
+        logo: "assets/images/icons8-store.png",
         backgroundColor: const Color(0xFFFF487E),
       ),
       Merchant(
         name: "Dreamworks",
-        logo: "assets/images/ogabassey.png",
+        logo: "assets/images/icons8-store.png",
         backgroundColor: const Color(0xFF393B9C),
       ),
       Merchant(
         name: "Hubmart",
-        logo: "assets/images/ogabassey.png",
+        logo: "assets/images/icons8-store.png",
         backgroundColor: Colors.black,
       ),
       Merchant(
         name: "Just Used",
-        logo: "assets/images/ogabassey.png",
+        logo: "assets/images/icons8-store.png",
         backgroundColor: const Color(0xFF00B8E2),
       ),
       Merchant(
         name: "Just fones",
-        logo: "assets/images/ogabassey.png",
+        logo: "assets/images/icons8-store.png",
         backgroundColor: Colors.black,
       ),
     ];

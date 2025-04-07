@@ -266,7 +266,10 @@ class HomePage extends StatelessWidget {
                           ),
                           itemBuilder: (context, index) {
                             final merchant = controller.merchants[index];
-                            return MerchantItem(merchant: merchant);
+                            return MerchantItem(
+                              merchant: merchant,
+                              index: index,
+                            );
                           },
                         ),
                       );

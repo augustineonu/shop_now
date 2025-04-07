@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_now/core/constants/color_pallete.dart';
 
 import '../data/model/merchant_model.dart';
 
 class MerchantItem extends StatelessWidget {
   final Merchant merchant;
+  final int index;
 
-  const MerchantItem({super.key, required this.merchant});
+  const MerchantItem({super.key, required this.merchant, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class MerchantItem extends StatelessWidget {
             Container(
               height: 60.sp,
               width: 60.sp,
-              padding: const EdgeInsets.all(4),
+              padding: EdgeInsets.all(12.sp),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: merchant.backgroundColor,
@@ -25,8 +27,9 @@ class MerchantItem extends StatelessWidget {
               child: Image.asset(
                 merchant.logo,
                 // fit: BoxFit.contain,
-                height: 25.h,
-                width: 25.w,
+                height: 20.h,
+                width: 20.w,
+                color: index == 4 ? Colors.black : white,
               ),
             ),
             if (merchant.isActive)

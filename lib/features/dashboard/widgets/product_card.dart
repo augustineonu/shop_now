@@ -17,6 +17,14 @@ class ProductCard extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF000000).withOpacity(0.07),
+            blurRadius: 10,
+            spreadRadius: 2,
+            offset: const Offset(0, 4),
+          ),
+        ],
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
