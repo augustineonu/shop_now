@@ -27,14 +27,14 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: scaffoldBackgroundColor,
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(160), // 👈 Custom height
+        preferredSize: Size.fromHeight(125.sp), // 👈 Custom height
         child: AppBar(
           backgroundColor: backgroundColor,
           elevation: 0,
           automaticallyImplyLeading: false,
           flexibleSpace: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
+              padding: EdgeInsets.fromLTRB(20.sp, 40.sp, 20.sp, 0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
                           ),
                           SizedBox(width: 7.w),
                           Container(
-                            padding: const EdgeInsets.all(8),
+                            padding: EdgeInsets.all(8.sp),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle, color: white),
                             child: SvgPicture.asset(
@@ -79,17 +79,21 @@ class HomePage extends StatelessWidget {
                         style: TextStyle(fontSize: 12.sp, color: textColorDim),
                       ),
                       const SizedBox(height: 6),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: primaryColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
+                      SizedBox(
+                        height: 37.sp,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4.r),
+                            ),
+                            padding: EdgeInsets.symmetric(horizontal: 16.sp),
                           ),
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Text("Activate Credit",
+                              style:
+                                  getBoldStyle(fontSize: 13.sp, color: white)),
                         ),
-                        child: Text("Activate Credit",
-                            style: getBoldStyle(fontSize: 13.sp, color: white)),
                       ),
                     ],
                   )
@@ -105,16 +109,16 @@ class HomePage extends StatelessWidget {
             children: [
               // Search bar
               Container(
-                padding: EdgeInsets.fromLTRB(20, 18, 20, 24),
+                padding: EdgeInsets.fromLTRB(20.sp, 18.sp, 20.sp, 24.sp),
                 decoration: BoxDecoration(
                   color: white,
-                  borderRadius: BorderRadius.circular(24),
+                  borderRadius: BorderRadius.circular(24.r),
                 ),
                 child: Row(
                   children: [
                     Expanded(
                       child: Container(
-                        height: 48,
+                        height: 48.sp,
                         decoration: BoxDecoration(
                           color: const Color(0xFFF5F5FF),
                           borderRadius: BorderRadius.circular(24),
@@ -123,27 +127,31 @@ class HomePage extends StatelessWidget {
                           onChanged: (value) =>
                               Get.find<ProductController>().search(value),
                           decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 12),
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 16.sp, vertical: 12.sp),
                             border: InputBorder.none,
                             hintText: "Search for products or stores",
-                            hintStyle: const TextStyle(color: Colors.grey),
-                            prefixIcon:
-                                const Icon(Icons.search, color: Colors.grey),
+                            hintStyle:
+                                TextStyle(color: Colors.grey, fontSize: 14.sp),
+                            prefixIcon: Icon(Icons.search,
+                                size: 25.sp, color: Colors.grey),
                           ),
                         ),
                       ),
                     ),
                     const SizedBox(width: 12),
                     Container(
-                      height: 48,
-                      width: 48,
+                      height: 48.sp,
+                      width: 48.sp,
                       decoration: BoxDecoration(
                         color: const Color(0xFFF5F5FF),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: IconButton(
-                        icon: SvgPicture.asset(AssetsManager.scanner),
+                        icon: SvgPicture.asset(
+                          AssetsManager.scanner,
+                          height: 30.sp,
+                        ),
                         onPressed: () {
                           // Add scan functionality here
                         },
@@ -158,7 +166,7 @@ class HomePage extends StatelessWidget {
               // ),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 14, horizontal: 20),
-                height: 450,
+                height: 410.sp,
                 child: Column(
                   children: [
                     Expanded(
@@ -234,7 +242,8 @@ class HomePage extends StatelessWidget {
                             },
                             child: Text(
                               "View all",
-                              style: getRegularStyle(color: primaryColor),
+                              style: getRegularStyle(
+                                  color: primaryColor, fontSize: 14.sp),
                             ),
                           ),
                         ],

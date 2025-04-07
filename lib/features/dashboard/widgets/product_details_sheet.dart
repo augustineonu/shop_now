@@ -39,6 +39,7 @@ class _ProductDetailSheetState extends State<ProductDetailSheet> {
       minChildSize: 0.4,
       builder: (context, scrollController) {
         return Container(
+          width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -52,7 +53,7 @@ class _ProductDetailSheetState extends State<ProductDetailSheet> {
                 Center(
                   child: Hero(
                     tag: product.price ?? '',
-                    child: Image.asset(product.image!, height: 200),
+                    child: Image.asset(product.image!, height: 200.sp),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -101,7 +102,10 @@ class _ProductDetailSheetState extends State<ProductDetailSheet> {
                       children: [
                         IconButton(
                           onPressed: decrement,
-                          icon: Icon(Icons.remove_circle_outline),
+                          icon: Icon(
+                            Icons.remove_circle_outline,
+                            size: 24.sp,
+                          ),
                         ),
                         Text(
                           quantity.toString(),
@@ -110,7 +114,10 @@ class _ProductDetailSheetState extends State<ProductDetailSheet> {
                         ),
                         IconButton(
                           onPressed: increment,
-                          icon: Icon(Icons.add_circle_outline),
+                          icon: Icon(
+                            Icons.add_circle_outline,
+                            size: 24.sp,
+                          ),
                         ),
                       ],
                     ),
@@ -136,7 +143,8 @@ class _ProductDetailSheetState extends State<ProductDetailSheet> {
                         margin: EdgeInsets.all(10),
                       );
                     },
-                    icon: Icon(Icons.shopping_cart_outlined, color: white),
+                    icon: Icon(Icons.shopping_cart_outlined,
+                        size: 24.sp, color: white),
                     label: Text(
                       "Add to Cart",
                       style: getSemiBoldStyle(

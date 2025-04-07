@@ -11,7 +11,8 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 170,
+      width: 170.w,
+      height: 150.sp,
       margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -20,20 +21,23 @@ class ProductCard extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Stack(
             children: [
-              Hero(
-                  tag: product.price ?? '',
-                  child: Image.asset(product.image!,
-                      height: 100, fit: BoxFit.contain)),
+              Center(
+                child: Hero(
+                    tag: product.price ?? '',
+                    child: Image.asset(product.image!,
+                        height: 100.sp, fit: BoxFit.contain)),
+              ),
               if (product.hasDiscount ?? false)
                 Positioned(
                   top: 3,
                   left: 3,
                   child: Container(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+                        EdgeInsets.symmetric(horizontal: 10.sp, vertical: 7.sp),
                     decoration: BoxDecoration(
                       color: white,
                       shape: BoxShape.circle,
@@ -42,15 +46,15 @@ class ProductCard extends StatelessWidget {
                       children: [
                         Text(
                           "Pay ",
-                          style: const TextStyle(
-                              fontSize: 12,
+                          style: TextStyle(
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                               color: oldPalleteColor),
                         ),
                         Text(
                           "${(100 - (product.price! / (product.originalPrice ?? product.price!) * 100)).toInt()}%",
-                          style: const TextStyle(
-                              fontSize: 14,
+                          style: TextStyle(
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
                               color: primaryColor),
                         ),
@@ -60,54 +64,60 @@ class ProductCard extends StatelessWidget {
                 ),
               Positioned(
                 top: 2,
-                right: 3,
+                right: 2,
                 child: Container(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+                      EdgeInsets.symmetric(horizontal: 10.sp, vertical: 7.sp),
                   decoration: BoxDecoration(
                     color: white,
                     shape: BoxShape.circle,
                   ),
                   child: Image.asset(
                     product.merchantLogo!,
+                    // height: 30.sp,
                   ),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 4),
-          Text(
-            product.name ??'',
-            style: TextStyle(fontWeight: FontWeight.w800, fontSize: 14.sp),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          const SizedBox(height: 4),
-          Row(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "₦ ${product.price?.toStringAsFixed(0)}",
-                style: const TextStyle(
-                  fontWeight: FontWeight.w800,
-                  color: primaryColor,
-                ),
+                product.name ?? '',
+                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 14.sp),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
-              if (product.hasDiscount ?? false)
-                Row(
-                  children: [
-                    SizedBox(width: 8),
-                    Text(
-                      "₦ ${product.originalPrice?.toStringAsFixed(0)}",
-                      style: TextStyle(
-                        decorationColor: oldPalleteColor,
-                        decoration: TextDecoration.lineThrough,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12.sp,
-                        color: oldPalleteColor,
-                      ),
+              SizedBox(height: 4.h),
+              Row(
+                children: [
+                  Text(
+                    "₦ ${product.price?.toStringAsFixed(0)}",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                        color: primaryColor,
+                        fontSize: 14.sp),
+                  ),
+                  if (product.hasDiscount ?? false)
+                    Row(
+                      children: [
+                        SizedBox(width: 8.w),
+                        Text(
+                          "₦ ${product.originalPrice?.toStringAsFixed(0)}",
+                          style: TextStyle(
+                            decorationColor: oldPalleteColor,
+                            decoration: TextDecoration.lineThrough,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12.sp,
+                            color: oldPalleteColor,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                ],
+              ),
             ],
           ),
         ],
